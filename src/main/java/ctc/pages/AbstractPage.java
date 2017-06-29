@@ -1,6 +1,6 @@
 package ctc.pages;
 
-import ctc.Service.WebDriverFactory;
+import ctc.Service.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,12 +10,12 @@ public class AbstractPage {
     private static final int WAIT_FOR_ELEMENT_TIMEOUT_SECONDS = 20;
     protected WebDriver driver;
 
-    public AbstractPage() {
-        this.driver = WebDriverFactory.getWebDriverInstance();
+    protected AbstractPage() {
+        this.driver = Driver.getDriverInstance();
 
     }
 
-    public WebDriver getDriver() {
+    protected WebDriver getDriver() {
         return this.driver;
     }
 

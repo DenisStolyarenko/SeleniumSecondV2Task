@@ -1,6 +1,6 @@
 package ctc;
 
-import ctc.Service.WebDriverFactory;
+import ctc.Service.Driver;
 import ctc.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -54,6 +54,6 @@ public class CTCTest {
 
     @AfterClass(description = "Close browser")
     public void closeBrowser(){
-        WebDriverFactory.closeBrowser();
+        Driver.closeBrowser();
     }
 }
