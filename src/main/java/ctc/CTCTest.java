@@ -10,13 +10,13 @@ import org.testng.annotations.Test;
 
 public class CTCTest {
 
-    private static final String projectName = "ENRC-TRD";
-    private static final String country = "Belarus";
-    private static final String destinationCity = "Minsk";
-    private static final String destinationAddress = "Minsk";
-    private static final String textAfterSuccessfulLogin = "Logged in as ";
-    private static final String sectionName = "Business Trips";
-    private static final String textWelcome = "Welcome to EPAM Cost Tracking Center";
+    private final String projectName = "ENRC-TRD";
+    private final String country = "Belarus";
+    private final String destinationCity = "Minsk";
+    private final String destinationAddress = "Minsk";
+    private final String textAfterSuccessfulLogin = "Logged in as ";
+    private final String sectionName = "Business Trips";
+    private final String textWelcome = "Welcome to EPAM Cost Tracking Center";
 
 
     @Test(description = "Log in")

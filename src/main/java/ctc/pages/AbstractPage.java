@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
-    protected static final int WAIT_FOR_ELEMENT_TIMEOUT_SECONDS = 20;
+    private static final int WAIT_FOR_ELEMENT_TIMEOUT_SECONDS = 20;
 
     protected void waitForElementPresent(By locator) {
         new WebDriverWait(Driver.getDriverInstance(), WAIT_FOR_ELEMENT_TIMEOUT_SECONDS).until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
