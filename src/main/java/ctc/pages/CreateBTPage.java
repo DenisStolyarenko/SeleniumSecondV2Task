@@ -14,32 +14,31 @@ import java.util.Date;
 import java.util.Random;
 
 public class CreateBTPage extends AbstractPage {
-    private static final Date currentDate = new Date();
-    private static final DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-    private static final DateFormat inputFormat = new SimpleDateFormat("MM/dd/yy");
-    private static long msDay = 7 * 24 * 60 * 60 * 1000;  //миллисекунд в 7 сутках
-    private static final Integer estimatedBudget = new Random().nextInt(100000);//поправить на статичное значение
+    private Date currentDate = new Date();
+    private DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    private DateFormat inputFormat = new SimpleDateFormat("MM/dd/yy");
+    private long msDay = 7 * 24 * 60 * 60 * 1000;  //миллисекунд в 7 сутках
+    private Integer estimatedBudget = 200000;
+    private String plannedStartDate = inputFormat.format(currentDate); //
+    private String plannedEndDate = inputFormat.format(currentDate.getTime() + msDay);
 
-    private static final String plannedStartDate = inputFormat.format(currentDate); //
-    private static final String plannedEndDate = inputFormat.format(currentDate.getTime() + msDay);
-
-    private static final By SAVE_BUTTON_LOCATOR = By.xpath("//button[text()[contains(.,'Save Changes')]]");
-    private static final By PLANNED_DURATION_LOCATOR = By.xpath("//span[@id='plannedDuration']");
-    private static final By PLANNED_START_DATE_LOCATOR = By.xpath("//input[@id='plannedStartDate_ui']");
-    private static final By PLANNED_END_DATE_LOCATOR = By.xpath("//input[@id='plannedEndDate_ui']");
-    private static final By DESTINATION_COUNTRY_LOCATOR = By.xpath(".//select[@name='destinationCountryId']");
-    private static final By DESTINATION_CITY_LOCATOR = By.xpath("//input[@name='destinationCity']");
-    private static final By DESTINATION_ADDRESS_LOCATOR = By.xpath("//textarea[@name='destinationAddress']");
-    private static final By DESCRIPTION_LOCATOR = By.xpath("//textarea[@id='description']");
-    private static final By TICKET_LOCATOR = By.xpath("//input[@id='ticketsRequired']");
-    private static final By CAR_LOCATOR = By.xpath("//input[@id='carRequired']");
-    private static final By ESTIMATE_BUDGET_LOCATOR = By.xpath("//input[@class='textfield textfieldDigit textfieldAmount' and @name='estimatedBudget']");
-    private static final By SUMMARY_LOCATOR = By.xpath("//input[@name='itemName']");
-    public static final By BT_ID_LOCATOR = By.xpath("//span[@class='item' and contains(text(), 'Business Trip ID: #')]/a");
+    private By SAVE_BUTTON_LOCATOR = By.xpath("//button[text()[contains(.,'Save Changes')]]");
+    private By PLANNED_DURATION_LOCATOR = By.xpath("//span[@id='plannedDuration']");
+    private By PLANNED_START_DATE_LOCATOR = By.xpath("//input[@id='plannedStartDate_ui']");
+    private By PLANNED_END_DATE_LOCATOR = By.xpath("//input[@id='plannedEndDate_ui']");
+    private By DESTINATION_COUNTRY_LOCATOR = By.xpath(".//select[@name='destinationCountryId']");
+    private By DESTINATION_CITY_LOCATOR = By.xpath("//input[@name='destinationCity']");
+    private By DESTINATION_ADDRESS_LOCATOR = By.xpath("//textarea[@name='destinationAddress']");
+    private By DESCRIPTION_LOCATOR = By.xpath("//textarea[@id='description']");
+    private By TICKET_LOCATOR = By.xpath("//input[@id='ticketsRequired']");
+    private By CAR_LOCATOR = By.xpath("//input[@id='carRequired']");
+    private By ESTIMATE_BUDGET_LOCATOR = By.xpath("//input[@class='textfield textfieldDigit textfieldAmount' and @name='estimatedBudget']");
+    private By SUMMARY_LOCATOR = By.xpath("//input[@name='itemName']");
+    private By BT_ID_LOCATOR = By.xpath("//span[@class='item' and contains(text(), 'Business Trip ID: #')]/a");
 
     public CreateBTPage fillMandatoryFields(String projectName, String country, String destinationCity, String destinationAddress) {
         String description = "Travel to " + destinationCity + " " + sdf.format(currentDate);
-        ChooseProjectBlock chooseProjectPage = new ChooseProjectBlock().open().searchProjectOrCost(projectName).clickByOK();
+        new ChooseProjectBlock().open().searchProjectOrCost(projectName).clickByOK();
         waitForElementEnabled(PLANNED_END_DATE_LOCATOR);
         Select countrySelect = new Select(Driver.getDriverInstance().findElement(DESTINATION_COUNTRY_LOCATOR));
         countrySelect.selectByVisibleText(country);

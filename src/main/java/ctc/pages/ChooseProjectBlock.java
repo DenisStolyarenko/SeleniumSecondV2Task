@@ -5,11 +5,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ChooseProjectBlock extends AbstractPage{
-    private static final String frameLookupDialogName = "frLookupDialog";
-    private static final By CHOOSE_PROJECT_LOCATOR = By.xpath("//img[contains(@onclick,'chooseprojectcostobject')]");
-    private static final By SEARCH_INPUT_LOCATOR = By.xpath("//input[@name='keywordSearch']");
-    private static final By GO_BUTTON_LOCATOR = By.xpath("//input[@value='Go']");
-    private static final By OK_BUTTON_LOCATOR = By.xpath("//input[@value='OK']");
+    private String frameLookupDialogName = "frLookupDialog";
+    private By CHOOSE_PROJECT_LOCATOR = By.xpath("//img[contains(@onclick,'chooseprojectcostobject')]");
+    private By SEARCH_INPUT_LOCATOR = By.xpath("//input[@name='keywordSearch']");
+    private By GO_BUTTON_LOCATOR = By.xpath("//input[@value='Go']");
+    private By OK_BUTTON_LOCATOR = By.xpath("//input[@value='OK']");
 
     public ChooseProjectBlock open(){
         waitForElementEnabled(CHOOSE_PROJECT_LOCATOR);

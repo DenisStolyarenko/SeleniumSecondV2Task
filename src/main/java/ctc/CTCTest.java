@@ -31,18 +31,17 @@ public class CTCTest {
     public void openListOfBT(String baseUrl) {
         BTListPage btListPage = new BTListPage().open(baseUrl);
         Assert.assertEquals(btListPage.readListName(), sectionName, "The section did not found");
-        btListPage.newBtClick();
     }
 
     @Test(dependsOnMethods = "openListOfBT", description = "create new BT")
     public void createNewBt(){
-        CreateBTPage createBTPage = new CreateBTPage().fillMandatoryFields(projectName,country, destinationCity, destinationAddress).saveForm();
+        CreateBTPage createBTPage = new BTListPage().newBtClick().fillMandatoryFields(projectName,country, destinationCity, destinationAddress).saveForm();
         Assert.assertEquals(createBTPage.getBTid().length(), 19, "Business Trip is not created");
     }
 
     @Test(dependsOnMethods = "createNewBt", description = "Log out")
     public void logOut() {
-        LogOutBlock logOutBlock = new LogOutBlock().logout().confirmation();
+        new LogOutBlock().logout().confirmation();
         Assert.assertTrue(new LoginPage().readIntroductionText().contains(textWelcome),"Logout is not performed");
     }
 
