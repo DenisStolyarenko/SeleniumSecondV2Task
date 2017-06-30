@@ -21,8 +21,7 @@ public class Driver {
     }
 
     private static WebDriver initDriver(){
-        WebDriver driver = null;
-        driver = new FirefoxDriver();
+        WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(COMMAND_DEFAULT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
         driver.manage().window().maximize();

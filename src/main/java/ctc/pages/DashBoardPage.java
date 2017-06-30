@@ -1,5 +1,6 @@
 package ctc.pages;
 
+import ctc.Service.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -9,7 +10,6 @@ public class DashBoardPage extends AbstractPage {
 
     public String readLoggedinText(){
         waitForElementPresent(DASHBOARD_LABEL_LOCATOR);
-        String result = getDriver().findElement(LOGGED_LABEL_LOCATOR).getText();
-        return result;
+        return Driver.getDriverInstance().findElement(LOGGED_LABEL_LOCATOR).getText();
     }
 }

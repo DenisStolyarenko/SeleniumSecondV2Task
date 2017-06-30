@@ -9,16 +9,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class CTCTest {
-    private WebDriver driver;
 
-//    private static final String baseUrl = "https://tst1.epm-ctc.projects.epam.com/";
-//    private static final String userName = "dst";
-//    private static final String pwdName = "0";
     private static final String projectName = "ENRC-TRD";
     private static final String country = "Belarus";
     private static final String destinationCity = "Minsk";
     private static final String destinationAddress = "Minsk";
-//    private static final String firstName = "Denis";
     private static final String textAfterSuccessfulLogin = "Logged in as ";
     private static final String sectionName = "Business Trips";
     private static final String textWelcome = "Welcome to EPAM Cost Tracking Center";
@@ -40,7 +35,6 @@ public class CTCTest {
     }
 
     @Test(dependsOnMethods = "openListOfBT", description = "create new BT")
-    @Parameters({"projectName", "country", "destinationCity", "destinationAddress"})
     public void createNewBt(){
         CreateBTPage createBTPage = new CreateBTPage().fillMandatoryFields(projectName,country, destinationCity, destinationAddress).saveForm();
         Assert.assertEquals(createBTPage.getBTid().length(), 19, "Business Trip is not created");

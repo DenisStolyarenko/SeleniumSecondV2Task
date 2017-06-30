@@ -1,5 +1,6 @@
 package ctc.pages;
 
+import ctc.Service.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,19 +12,18 @@ public class LoginPage extends AbstractPage {
     private static final By LOGIN_PAGE_TEXT_LOCATOR = By.xpath("//td[@class='header1']/h1");
 
     public DashBoardPage login(String userName, String pwdName){
-        getDriver().findElement(USER_NAME_INPUT_LOCATOR).sendKeys(userName);
-        getDriver().findElement(PASSWORD_INPUT_LOCATOR).sendKeys(pwdName);
-        getDriver().findElement(LOGIN_BUTTON_LOCATOR).click();
+        Driver.getDriverInstance().findElement(USER_NAME_INPUT_LOCATOR).sendKeys(userName);
+        Driver.getDriverInstance().findElement(PASSWORD_INPUT_LOCATOR).sendKeys(pwdName);
+        Driver.getDriverInstance().findElement(LOGIN_BUTTON_LOCATOR).click();
         return new DashBoardPage();
     }
 
     public LoginPage open(String baseUrl){
-        getDriver().get(baseUrl + ADDITIONAL_URL);
+        Driver.getDriverInstance().get(baseUrl + ADDITIONAL_URL);
         return this;
     }
 
     public String readIntroductionText(){
-        String result = getDriver().findElement(LOGIN_PAGE_TEXT_LOCATOR).getText();
-        return result;
+        return Driver.getDriverInstance().findElement(LOGIN_PAGE_TEXT_LOCATOR).getText();
     }
 }

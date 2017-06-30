@@ -1,5 +1,6 @@
 package ctc.pages;
 
+import ctc.Service.Driver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,13 +11,12 @@ public class LogOutBlock extends AbstractPage {
     public LogOutBlock logout(){
         waitForElementVisible(LOGOUT_LOCATOR);
         waitForElementEnabled(LOGOUT_LOCATOR);
-        driver.findElement(LOGOUT_LOCATOR).click();
+        Driver.getDriverInstance().findElement(LOGOUT_LOCATOR).click();
         return this;
     }
 
     public LogOutBlock confirmation(){
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
+        Driver.getDriverInstance().switchTo().alert().accept();
         return this;
     }
 
