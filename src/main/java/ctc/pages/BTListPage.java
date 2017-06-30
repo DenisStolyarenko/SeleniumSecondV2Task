@@ -2,7 +2,6 @@ package ctc.pages;
 
 import ctc.Service.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class BTListPage extends AbstractPage {
     private final String BUSINESS_TRIP_LOCATION = "/businesstrip/list.do";

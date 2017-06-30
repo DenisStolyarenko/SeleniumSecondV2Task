@@ -2,7 +2,6 @@ package ctc.pages;
 
 import ctc.Service.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class DashBoardPage extends AbstractPage {
     private final By LOGGED_LABEL_LOCATOR = By.xpath("//td[@id='headerLogin']/div[@class='blInfoLogin']");

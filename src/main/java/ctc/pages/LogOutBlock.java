@@ -1,9 +1,7 @@
 package ctc.pages;
 
 import ctc.Service.Driver;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class LogOutBlock extends AbstractPage {
     private final By LOGOUT_LOCATOR = By.xpath("//a[@href='logout.do']");

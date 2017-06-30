@@ -2,7 +2,6 @@ package ctc.pages;
 
 import ctc.Service.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends AbstractPage {
     private final String ADDITIONAL_URL = "/login.do?logout=true&tz=GMT%2B06:00";
