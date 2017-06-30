@@ -22,19 +22,19 @@ public class CreateBTPage extends AbstractPage {
     private String plannedStartDate = inputFormat.format(currentDate); //
     private String plannedEndDate = inputFormat.format(currentDate.getTime() + msDay);
 
-    private By SAVE_BUTTON_LOCATOR = By.xpath("//button[text()[contains(.,'Save Changes')]]");
-    private By PLANNED_DURATION_LOCATOR = By.xpath("//span[@id='plannedDuration']");
-    private By PLANNED_START_DATE_LOCATOR = By.xpath("//input[@id='plannedStartDate_ui']");
-    private By PLANNED_END_DATE_LOCATOR = By.xpath("//input[@id='plannedEndDate_ui']");
-    private By DESTINATION_COUNTRY_LOCATOR = By.xpath(".//select[@name='destinationCountryId']");
-    private By DESTINATION_CITY_LOCATOR = By.xpath("//input[@name='destinationCity']");
-    private By DESTINATION_ADDRESS_LOCATOR = By.xpath("//textarea[@name='destinationAddress']");
-    private By DESCRIPTION_LOCATOR = By.xpath("//textarea[@id='description']");
-    private By TICKET_LOCATOR = By.xpath("//input[@id='ticketsRequired']");
-    private By CAR_LOCATOR = By.xpath("//input[@id='carRequired']");
-    private By ESTIMATE_BUDGET_LOCATOR = By.xpath("//input[@class='textfield textfieldDigit textfieldAmount' and @name='estimatedBudget']");
-    private By SUMMARY_LOCATOR = By.xpath("//input[@name='itemName']");
-    private By BT_ID_LOCATOR = By.xpath("//span[@class='item' and contains(text(), 'Business Trip ID: #')]/a");
+    private final By SAVE_BUTTON_LOCATOR = By.xpath("//button[text()[contains(.,'Save Changes')]]");
+    private final By PLANNED_DURATION_LOCATOR = By.xpath("//span[@id='plannedDuration']");
+    private final By PLANNED_START_DATE_LOCATOR = By.xpath("//input[@id='plannedStartDate_ui']");
+    private final By PLANNED_END_DATE_LOCATOR = By.xpath("//input[@id='plannedEndDate_ui']");
+    private final By DESTINATION_COUNTRY_LOCATOR = By.xpath(".//select[@name='destinationCountryId']");
+    private final By DESTINATION_CITY_LOCATOR = By.xpath("//input[@name='destinationCity']");
+    private final By DESTINATION_ADDRESS_LOCATOR = By.xpath("//textarea[@name='destinationAddress']");
+    private final By DESCRIPTION_LOCATOR = By.xpath("//textarea[@id='description']");
+    private final By TICKET_LOCATOR = By.xpath("//input[@id='ticketsRequired']");
+    private final By CAR_LOCATOR = By.xpath("//input[@id='carRequired']");
+    private final By ESTIMATE_BUDGET_LOCATOR = By.xpath("//input[@class='textfield textfieldDigit textfieldAmount' and @name='estimatedBudget']");
+    private final By SUMMARY_LOCATOR = By.xpath("//input[@name='itemName']");
+    private final By BT_ID_LOCATOR = By.xpath("//span[@class='item' and contains(text(), 'Business Trip ID: #')]/a");
 
     public CreateBTPage fillMandatoryFields(String projectName, String country, String destinationCity, String destinationAddress) {
         String description = "Travel to " + destinationCity + " " + sdf.format(currentDate);

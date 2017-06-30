@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LogOutBlock extends AbstractPage {
-    private By LOGOUT_LOCATOR = By.xpath("//a[@href='logout.do']");
+    private final By LOGOUT_LOCATOR = By.xpath("//a[@href='logout.do']");
 
     public LogOutBlock logout(){
         waitForElementVisible(LOGOUT_LOCATOR);

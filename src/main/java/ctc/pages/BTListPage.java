@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BTListPage extends AbstractPage {
-    private String BUSINESS_TRIP_LOCATION = "/businesstrip/list.do";
-    private By BT_LIST_NAME_LOCATOR = By.xpath("//td[@class='header1']/h1");
-    private By CREATE_BUTTON_LOCATOR = By.xpath("//input[@title='Create New Business Trip Request']");
+    private final String BUSINESS_TRIP_LOCATION = "/businesstrip/list.do";
+    private final By BT_LIST_NAME_LOCATOR = By.xpath("//td[@class='header1']/h1");
+    private final By CREATE_BUTTON_LOCATOR = By.xpath("//input[@title='Create New Business Trip Request']");
 
     public BTListPage open(String baseUrl){
         Driver.getDriverInstance().get(baseUrl + BUSINESS_TRIP_LOCATION);
