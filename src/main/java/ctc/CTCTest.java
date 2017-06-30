@@ -18,7 +18,6 @@ public class CTCTest {
     private final String sectionName = "Business Trips";
     private final String textWelcome = "Welcome to EPAM Cost Tracking Center";
 
-
     @Test(description = "Log in")
     @Parameters({"baseUrl", "userName", "pwdName", "firstName"})
     public void loginTest(String baseUrl, String userName, String pwdName, String firstName){
